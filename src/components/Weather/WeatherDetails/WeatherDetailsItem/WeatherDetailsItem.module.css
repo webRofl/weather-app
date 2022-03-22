@@ -1,0 +1,12 @@
+.details__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.details__description {
+  display: block;
+}
+
+.details__value {
+  display: block;
+}

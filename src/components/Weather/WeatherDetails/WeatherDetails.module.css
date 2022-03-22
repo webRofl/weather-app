@@ -1,0 +1,7 @@
+.main__details {
+  display: flex;
+  height: 20.5vh;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}

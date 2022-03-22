@@ -1,0 +1,16 @@
+.main__bigWeatherBlock {
+  display: flex;
+  height: 54.5vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bigWeatherBlock__temperatureValue {
+  font-size: 150px;
+}
+
+.bigWeatherBlock__description {
+  font-size: 45px;
+}

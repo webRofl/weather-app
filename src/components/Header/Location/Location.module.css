@@ -1,0 +1,90 @@
+.header__townBlock {
+  color: white;
+  margin-left: 4vh;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__townBlock_disable {
+  display: none;
+}
+
+.header__town {
+  font-size: 50px;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.header__changeLocation,
+.header__myLocation {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  color: rgb(14, 10, 10);
+  transition: all 1s;
+}
+
+.header__myLocation {
+  background-image: url('../../../assets/images/location.svg');
+  background-repeat: no-repeat;
+}
+
+.header__changeLocation:hover {
+  color: silver;
+}
+
+.header__myLocation:hover {
+  color: silver;
+}
+
+.header__myLocation::after {
+  content: 'My location';
+  margin-left: 32px;
+}
+
+.header__changeLocation {
+  margin-right: 1vh;
+}
+
+.header__searchForm {
+  display: none;
+}
+
+.header__searchForm_active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__formInput {
+  background: transparent;
+  border: 1.5px solid white;
+  border-radius: 10px;
+  margin-right: 15px;
+  padding: 5px;
+  color: white;
+}
+
+.header__formBtn {
+  background: transparent;
+  border: none;
+  background-image: url(../../../assets/images/send.svg);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.header__formInput:active,
+.header__formInput:focus,
+.header__formBtn:active,
+.header__formBtn:focus {
+  outline: 0;
+  outline-offset: 0;
+}

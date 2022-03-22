@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+}
+
+.wrapper {
+  height: 100vh;
+  background-image: url('./assets/images/clear_weather1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.root__wrapper {
+  padding: 5vh;
+}
+
+.wrapper__header {
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper__main {
+  height: 75vh;
+}
+
+.mainPreloader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

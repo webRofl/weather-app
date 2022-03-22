@@ -1,0 +1,30 @@
+.header__changeMetric {
+  margin-right: 4vh;
+  padding: 5px;
+  color: white;
+}
+
+.header__changeMetric::before {
+  content: 'º ';
+}
+
+.header__scale {
+  opacity: 0.5;
+  border: 1px solid white;
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  cursor: default;
+}
+
+.header__scale:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.header__scale_active {
+  opacity: 1;
+}
+
+.header__scale:last-child {
+  border-radius: 0 8px 8px 0;
+}
