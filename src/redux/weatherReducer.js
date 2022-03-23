@@ -4,6 +4,7 @@ import {
   conversionPressure,
 } from '../utils/conversion/сonversion';
 import { getWeatherInfo } from '../api/api';
+import { setTown } from './locationReducer';
 
 const SET_WEATHER = 'locationReducer/SET_WEATHER';
 const SET_TEMP_SCALE_C = 'SET_TEMP_SCALE_C';
@@ -86,6 +87,9 @@ export const getWeather = (lat, lon) => async (dispatch) => {
   const weatherInfo = await getWeatherInfo.getTownWeather(lat, lon);
   const main = weatherInfo.list[0].main;
   const weather = weatherInfo.list[0].weather[0];
+
+  dispatch(setTown(weatherInfo.city.name));
+
   dispatch(
     setWeather(
       main.temp,

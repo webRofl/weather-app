@@ -2,9 +2,20 @@ import React from 'react';
 import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import classes from './Location.module.css';
+import usePosition from '../../../utils/hooks/getPosition';
 
 const Location = (props) => {
   const [isSearch, setIsSearch] = useState(false);
+
+  const { lat, lon, error } = usePosition();
+
+  const getPosition = () => {
+    if (error) {
+      alert(error.message);
+      return;
+    }
+    props.getWeather(lat, lon);
+  };
 
   return (
     <>
@@ -25,7 +36,10 @@ const Location = (props) => {
           >
             Change location
           </button>
-          <button className={classes.header__myLocation}></button>
+          <button
+            className={classes.header__myLocation}
+            onClick={getPosition}
+          ></button>
         </div>
       </div>
 
