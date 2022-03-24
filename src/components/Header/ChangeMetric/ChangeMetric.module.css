@@ -28,3 +28,9 @@
 .header__scale:last-child {
   border-radius: 0 8px 8px 0;
 }
+
+@media (max-width: 500px) {
+  .header__changeMetric {
+    display: none;
+  }
+}

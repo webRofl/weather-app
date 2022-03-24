@@ -88,3 +88,34 @@
   outline: 0;
   outline-offset: 0;
 }
+
+@media (max-width: 500px) {
+  .header__townBlock {
+    margin: 0;
+    text-align: center;
+  }
+
+  .header__town {
+    font-size: 60px;
+    align-self: center;
+  }
+
+  .header__changeLocation,
+  .header__myLocation {
+    margin: 0;
+    display: block;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    width: 100%;
+  }
+
+  .header__changeLocation {
+    background-color: #008cba;
+    margin: 15px 0;
+  }
+
+  .header__myLocation {
+    background-color: #4caf50;
+  }
+}

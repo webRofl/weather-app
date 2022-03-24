@@ -3,9 +3,7 @@ import classes from './WeatherInfo.module.css';
 
 const WeatherInfo = (props) => {
   return (
-    <div
-      className={`${classes.main__bigWeatherBlock} ${classes.bigWeatherBlock}`}
-    >
+    <div className={`${classes.main__bigWeatherBlock}`}>
       {props.tempScaleC ? (
         <span className={classes.bigWeatherBlock__temperatureValue}>
           {props.tempC}ºC

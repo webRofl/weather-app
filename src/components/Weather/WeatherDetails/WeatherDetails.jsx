@@ -4,7 +4,7 @@ import WeatherDetailsItem from './WeatherDetailsItem/WeatherDetailsItem';
 
 const WeatherDetails = (props) => {
   return (
-    <div className={`${classes.main__details} ${classes.details}`}>
+    <div className={`${classes.main__details}`}>
       <WeatherDetailsItem
         value={props.windSpeed}
         description={'Wind'}

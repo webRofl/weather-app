@@ -10,3 +10,18 @@
 .details__value {
   display: block;
 }
+
+@media (max-width: 500px) {
+  .details__item {
+    flex-direction: row;
+  }
+
+  .details__description {
+    margin-right: 5px;
+    color: crimson;
+  }
+
+  .details__description::after {
+    content: ':';
+  }
+}

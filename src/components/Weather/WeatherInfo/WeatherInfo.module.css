@@ -14,3 +14,13 @@
 .bigWeatherBlock__description {
   font-size: 45px;
 }
+
+@media (max-width: 500px) {
+  .bigWeatherBlock__temperatureValue {
+    font-size: 80px;
+  }
+
+  .bigWeatherBlock__description {
+    font-size: 30px;
+  }
+}
