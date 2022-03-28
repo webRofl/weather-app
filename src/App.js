@@ -21,7 +21,7 @@ const App = (props) => {
 
   return (
     <div className={`${classes.root__wrapper} ${classes.wrapper}`}>
-      <header className={`${classes.wrapper__header} ${classes.header}`}>
+      <header className={`${classes.wrapper__header}`}>
         <HeaderContainer />
       </header>
       <main className={classes.wrapper__main}>
