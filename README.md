@@ -79,8 +79,5 @@ $ npm start
 
 <br />
 
-![main][3]
-
 [1]: https://webrofl.github.io/weather-app/
 [2]: https://nodejs.org/
-[3]: https://i.yapx.ru/ReovY.png 'weather'
