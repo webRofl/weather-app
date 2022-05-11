@@ -1,8 +1,23 @@
 import { useState, useEffect } from 'react';
 
 const usePosition = () => {
-  const [position, setPosition] = useState({});
-  const [error, setError] = useState(null);
+  type Coords = {
+    latitude: number | null;
+    longitude: number | null;
+  };
+
+  type Position = {
+    coords: Coords;
+  };
+
+  const [position, setPosition] = useState<Position>({
+    coords: {
+      latitude: null,
+      longitude: null,
+    },
+  });
+
+  const [error, setError] = useState<string>('');
 
   useEffect(() => {
     const geo = navigator.geolocation;
@@ -12,7 +27,9 @@ const usePosition = () => {
       return;
     }
 
-    const watcher = geo.watchPosition(setPosition, setError);
+    const watcher = geo.watchPosition(setPosition, (error) =>
+      setError(error.message)
+    );
 
     return () => geo.clearWatch(watcher);
   }, []);

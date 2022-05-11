@@ -1,17 +1,22 @@
-import classes from './App.module.css';
 import { useEffect } from 'react';
 import { getTown } from './redux/locationReducer';
 import Preloader from './components/common/Preloader/Preloader';
-import { connect } from 'react-redux';
-import WeatherContainer from './components/Weather/WeatherContainer';
-import HeaderContainer from './components/Header/HeaderContainer';
+import { useDispatch, useSelector } from 'react-redux';
+import Weather from './components/Weather/Weather';
+import Header from './components/Header/Header';
+import { GlobalState } from './redux/store';
+import classes from './App.module.css';
 
-const App = (props) => {
+const App: React.FC = () => {
+  const dispatch = useDispatch();
+
+  const town = useSelector((state: GlobalState) => state.location.town);
+
   useEffect(() => {
-    props.getTown('Moscow');
+    dispatch(getTown('Moscow'));
   }, []);
 
-  if (!props.town) {
+  if (!town) {
     return (
       <div className={classes.mainPreloader}>
         <Preloader />
@@ -22,19 +27,13 @@ const App = (props) => {
   return (
     <div className={`${classes.root__wrapper} ${classes.wrapper}`}>
       <header className={`${classes.wrapper__header}`}>
-        <HeaderContainer />
+        <Header />
       </header>
       <main className={classes.wrapper__main}>
-        <WeatherContainer />
+        <Weather />
       </main>
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  town: state.location.town,
-});
-
-const AppContainer = connect(mapStateToProps, { getTown })(App);
-
-export default AppContainer;
+export default App;

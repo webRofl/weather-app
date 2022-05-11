@@ -1,20 +1,29 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import classes from './ChangeMetric.module.css';
+import { GlobalState } from '../../../redux/store';
+import { setTempScaleC } from '../../../redux/weatherReducer';
 
-const ChangeMetric = (props) => {
+const ChangeMetric: React.FC = () => {
+  const tempScaleC = useSelector(
+    (state: GlobalState) => state.weather.tempScaleC
+  );
+
+  const dispatch = useDispatch();
+
   const changeScaleC = () => {
-    props.setTempScaleC(true);
+    dispatch(setTempScaleC(true));
   };
 
   const changeScaleF = () => {
-    props.setTempScaleC(false);
+    dispatch(setTempScaleC(false));
   };
 
   return (
     <div className={classes.header__changeMetric}>
       <span
         className={`${classes.header__scale} ${
-          props.tempScaleC ? classes.header__scale_active : ''
+          tempScaleC ? classes.header__scale_active : ''
         }`}
         onClick={changeScaleC}
       >
@@ -22,7 +31,7 @@ const ChangeMetric = (props) => {
       </span>
       <span
         className={`${classes.header__scale} ${
-          !props.tempScaleC ? classes.header__scale_active : ''
+          !tempScaleC ? classes.header__scale_active : ''
         }`}
         onClick={changeScaleF}
       >

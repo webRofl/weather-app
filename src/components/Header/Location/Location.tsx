@@ -2,20 +2,31 @@ import React from 'react';
 import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import classes from './Location.module.css';
-import usePosition from '../../../utils/hooks/getPosition';
+import usePosition from '../../../utils/hooks/getPositiont';
+import { useDispatch, useSelector } from 'react-redux';
+import { getWeather } from '../../../redux/weatherReducer';
+import { GlobalState } from '../../../redux/store';
+import { getTown } from '../../../redux/locationReducer';
+import Preloader from '../../common/Preloader/Preloader';
 
-const Location = (props) => {
+const Location: React.FC = () => {
+  const town = useSelector((state: GlobalState) => state.location.town);
+
+  const dispatch = useDispatch();
+
   const [isSearch, setIsSearch] = useState(false);
 
   const { lat, lon, error } = usePosition();
 
   const getPosition = () => {
     if (error) {
-      alert(error.message);
+      alert(error);
       return;
     }
-    props.getWeather(lat, lon);
+    dispatch(getWeather(Number(lat), Number(lon)));
   };
+
+  if (!town) return <Preloader />;
 
   return (
     <>
@@ -27,7 +38,7 @@ const Location = (props) => {
         }
       >
         <span className={classes.header__town}>
-          {props.town[0].toUpperCase().concat(props.town.slice(1))}
+          {town[0].toUpperCase().concat(town.slice(1))}
         </span>
         <div>
           <button
@@ -46,9 +57,9 @@ const Location = (props) => {
       <Formik
         initialValues={{ town: '' }}
         onSubmit={(values, action) => {
-          if (values.town.trim()) props.getTown(values.town);
+          if (values.town.trim()) dispatch(getTown(values.town));
           setIsSearch(false);
-          action.resetForm({ town: '' });
+          action.resetForm();
         }}
       >
         <Form

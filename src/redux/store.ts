@@ -1,11 +1,16 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import locationReducer from './locationReducer';
+import locationReducer, { LocationState } from './locationReducer';
 import thunkMiddleware from 'redux-thunk';
-import weatherReducer from './weatherReducer';
+import weatherReducer, { WeatherState } from './weatherReducer';
 
 const reducers = {
   location: locationReducer,
   weather: weatherReducer,
+};
+
+export type GlobalState = {
+  location: LocationState;
+  weather: WeatherState;
 };
 
 const store = createStore(
