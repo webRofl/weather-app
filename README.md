@@ -32,6 +32,7 @@
   - БЭМ
 - JavaScript
   - Axios
+- TypeScript
 - React
   - css-modules
   - React-hooks
