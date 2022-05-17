@@ -38,7 +38,7 @@
   - React-hooks
   - React-redux
 - Redux
-  - Redux-thunk
+  - Redux-saga
 
 <br />
 
