@@ -87,7 +87,6 @@ function* getWeatherWorker(
         main.feels_like,
         weather.description,
         weather.icon,
-        data.list[0].rain['3h'],
         data.list[0].wind.speed
       )
     );

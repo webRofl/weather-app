@@ -15,7 +15,6 @@ export type WeatherState = {
   description: string | null;
   icon: string | null;
   tempScaleC: boolean;
-  rain: number | null;
 };
 
 export type SetWeatherAction = {
@@ -28,7 +27,6 @@ export type SetWeatherAction = {
   feelsLikeF: number;
   description: string;
   icon: string;
-  rain: number;
   windSpeed: number;
 };
 

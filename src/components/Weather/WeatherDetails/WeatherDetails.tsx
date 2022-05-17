@@ -13,9 +13,19 @@ const WeatherDetails: React.FC = () => {
 
   const humidity = useSelector((state: GlobalState) => state.weather.humidity);
 
-  const rain = useSelector((state: GlobalState) => state.weather.rain);
+  const feelsLikeC = useSelector(
+    (state: GlobalState) => state.weather.feelsLikeC
+  );
 
   const lang = useSelector((state: GlobalState) => state.location.lang);
+
+  const feelsLikeF = useSelector(
+    (state: GlobalState) => state.weather.feelsLikeF
+  );
+
+  const tempScaleC = useSelector(
+    (state: GlobalState) => state.weather.tempScaleC
+  );
 
   return (
     <div className={`${classes.main__details}`}>
@@ -35,9 +45,9 @@ const WeatherDetails: React.FC = () => {
         scale={'%'}
       />
       <WeatherDetailsItem
-        value={rain}
-        description={lang === 'ru' ? 'дождь' : 'rain'}
-        scale={'%'}
+        value={tempScaleC ? feelsLikeC : feelsLikeF}
+        description={lang === 'ru' ? 'ощущения' : 'feels like'}
+        scale={tempScaleC ? 'ºC' : 'ºF'}
       />
     </div>
   );

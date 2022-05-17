@@ -28,7 +28,6 @@ const initialState: WeatherState = {
   description: null,
   icon: null,
   tempScaleC: true,
-  rain: null,
 };
 
 type WeatherReducerAction = SetWeatherAction | SetTempScaleCAction;
@@ -46,7 +45,6 @@ const weatherReducer = (state = initialState, action: WeatherReducerAction) => {
         feelsLikeF: action.feelsLikeF,
         description: action.description,
         icon: action.icon,
-        rain: action.rain,
         windSpeed: action.windSpeed,
       };
     case SET_TEMP_SCALE_C:
@@ -66,7 +64,6 @@ export const setWeather = (
   feelsLike: number,
   description: string,
   icon: string,
-  rain: number,
   windSpeed: number
 ): SetWeatherAction => ({
   type: SET_WEATHER,
@@ -78,7 +75,6 @@ export const setWeather = (
   feelsLikeF: conversionKelvinToFahrenheit(feelsLike),
   description,
   icon,
-  rain,
   windSpeed,
 });
 
