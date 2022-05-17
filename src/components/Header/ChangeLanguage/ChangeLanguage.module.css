@@ -1,0 +1,24 @@
+.header__optionBlock {
+    background: transparent;
+}
+
+.header__changeLanguageSelect {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    padding: 5px;
+    font-size: 22px;
+}
+
+.header__changeLanguageOption {
+    color: black;
+    font-size: 22px;
+}
+
+@media (max-width: 500px) {
+    .header__changeLanguageSelect {
+        margin-top: 28px;
+    }
+}

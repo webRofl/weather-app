@@ -13,31 +13,31 @@ const WeatherDetails: React.FC = () => {
 
   const humidity = useSelector((state: GlobalState) => state.weather.humidity);
 
-  const visibility = useSelector(
-    (state: GlobalState) => state.weather.visibility
-  );
+  const rain = useSelector((state: GlobalState) => state.weather.rain);
+
+  const lang = useSelector((state: GlobalState) => state.location.lang);
 
   return (
     <div className={`${classes.main__details}`}>
       <WeatherDetailsItem
         value={windSpeed}
-        description={'Wind'}
-        scale={'m/s'}
+        description={lang === 'ru' ? 'ветер' : 'wind'}
+        scale={lang === 'ru' ? 'м/с' : 'm/s'}
       />
       <WeatherDetailsItem
         value={pressure}
-        description={'Pressure'}
-        scale={'mmHg'}
+        description={lang === 'ru' ? 'давление' : 'pressure'}
+        scale={lang === 'ru' ? 'мм. рт. ст.' : 'mmHg'}
       />
       <WeatherDetailsItem
         value={humidity}
-        description={'Humidity'}
+        description={lang === 'ru' ? 'влажность' : 'humidity'}
         scale={'%'}
       />
       <WeatherDetailsItem
-        value={visibility}
-        description={'Weather Group'}
-        scale={''}
+        value={rain}
+        description={lang === 'ru' ? 'дождь' : 'rain'}
+        scale={'%'}
       />
     </div>
   );

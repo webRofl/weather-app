@@ -41,7 +41,12 @@
   color: silver;
 }
 
-.header__myLocation::after {
+.header__myLocation_ru::after {
+  content: 'Мое местоположение';
+  margin-left: 32px;
+}
+
+.header__myLocation_en::after {
   content: 'My location';
   margin-left: 32px;
 }

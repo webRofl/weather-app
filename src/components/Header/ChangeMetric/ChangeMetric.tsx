@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './ChangeMetric.module.css';
 import { GlobalState } from '../../../redux/store';
-import { setTempScaleC } from '../../../redux/weatherReducer';
+import { setTempScaleC } from '../../../redux/reducers/weatherReducer';
 
 const ChangeMetric: React.FC = () => {
   const tempScaleC = useSelector(

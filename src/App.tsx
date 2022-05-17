@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { getTown } from './redux/locationReducer';
+import { getTown } from './redux/reducers/locationReducer';
 import Preloader from './components/common/Preloader/Preloader';
 import { useDispatch, useSelector } from 'react-redux';
 import Weather from './components/Weather/Weather';
